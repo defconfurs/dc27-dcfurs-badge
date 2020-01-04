@@ -10,6 +10,11 @@ sleeptimeout = 900000
 # The default banner message to print in the scroll.py animation.
 banner = "DEFCON Furs"
 
+# Default color scheme to print in the scroll.py animation.
+# asexual, bisexual, nonbinary
+# pansexual, transgender, gaypride (default)
+bannerscheme = 'gaypride'
+
 # Enable extra verbose debug messages.
 debug = False
 

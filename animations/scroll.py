@@ -63,15 +63,65 @@ font5var = {'A':bytearray([0x1E,0x05,0x05,0x1E,0x00]),
             '!':bytearray([0x17,0x17,0x00]),
             '?':bytearray([0x01,0x15,0x02,0x00])}
 
+
+class Color:
+    RED =          0b11100000
+    ORANGE =       0b11101000
+    YELLOW =       0b11111100
+    GREEN =        0b00011100
+    BLUE =         0b00000011
+    LIGHTBLUE =    0b00100111
+    PURPLE =       0b01100011
+    PINK =         0b11100101
+    WHITE =        0b11111111
+    GREY =         0b01001001
+    BLACK =        0b00100101
+
+
 class scroll:
-    color_map = [
-        0xe0, # Red
-        0xe8, # Orange
-        0xfc, # Yellow
-        0x1c, # Green
-        0x03, # Blue
-        0x43  # Purple
-    ]
+    # asexual, bisexual, nonbinary
+    # pansexual, transgender, gaypride (default)
+    if settings.bannerscheme == 'asexual':  # *shrug* "Guess I can't do ace." "Yeah, none of us can."
+        color_map = [
+            Color.BLACK,  # "What are you gonna do? Turn it off? :eyes:"
+            Color.GREY,
+            Color.WHITE,
+            Color.PURPLE
+        ]
+    elif settings.bannerscheme == 'bisexual':
+        color_map = [
+            Color.PINK,
+            Color.PURPLE,
+            Color.BLUE
+        ]
+    elif settings.bannerscheme == 'nonbinary':
+        color_map = [
+            Color.YELLOW,
+            Color.WHITE,
+            Color.PURPLE,
+            Color.BLACK
+        ]
+    elif settings.bannerscheme == 'pansexual':
+        color_map = [
+            Color.PINK,
+            Color.YELLOW,
+            Color.LIGHTBLUE
+        ]
+    elif settings.bannerscheme == 'transgender':
+        color_map = [
+            Color.LIGHTBLUE,
+            Color.PINK,
+            Color.WHITE
+        ]
+    else:  # gaypride, default
+        color_map = [
+            Color.RED,
+            Color.ORANGE,
+            Color.YELLOW,
+            Color.GREEN,
+            Color.BLUE,
+            Color.PURPLE
+        ]
 
     def __init__(self, text=None):
         if text:
